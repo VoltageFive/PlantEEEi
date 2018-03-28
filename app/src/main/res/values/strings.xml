@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PlantEEEi</string>
+    <string name="home_home">Home</string>
+    <string name="home_calendar">Calendar</string>
+    <string name="home_stats">Stats</string>
+    <string name="TextViewPlantName">Plant Name</string>
+    <string name="TextViewPlantDesc">
+        \nMature Height:\n\n\n
+        Plant Facts:
+    </string>
+</resources>
