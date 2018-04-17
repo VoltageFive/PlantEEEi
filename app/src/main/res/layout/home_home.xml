@@ -11,7 +11,7 @@
         android:id="@+id/home_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/darkcolorAccent"
+        android:background="@color/appbgcolor"
         tools:context="com.eee.voltagefive.planteeei.HomeFragment"
         tools:layout_editor_absoluteX="match_parent"
         tools:layout_editor_absoluteY="match_parent">
@@ -24,7 +24,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginEnd="63dp"
             android:layout_marginTop="131dp"
-            android:clickable="true"
+
             android:tint="@android:color/background_light"
             app:backgroundTint="@android:color/holo_green_dark"
             app:elevation="@android:dimen/app_icon_size"
@@ -37,16 +37,31 @@
             app:rippleColor="@android:color/background_light"
             app:srcCompat="@android:drawable/ic_input_add" />
 
+        <!--<Button
+            android:id="@+id/BtnAddPlant"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="59dp"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/rounded_button"
+
+            android:text="+"
+            android:textSize="50sp"
+            android:textStyle="normal|bold"
+            android:visibility="visible" />-->
+
         <ImageView
-            android:id="@+id/PlantStatus"
+            android:id="@+id/CurrentPlant"
             android:layout_width="216dp"
             android:layout_height="match_parent"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:adjustViewBounds="false"
+            android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/ic_launcher" />
 
     </RelativeLayout>

@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">#396510</color>
     <color name="colorPrimaryDark">#234702</color>
-    <color name="colorAccent">#dff6ca</color>
-    <color name="darkcolorAccent">#b9d4a1</color>
+    <color name="colorAccent">#dff6ca</color>   <!--Lighter than app background color-->
+    <color name="appbgcolor">#b9d4a1</color>
+    <color name="tabcolor">#9fd356</color>
 </resources>

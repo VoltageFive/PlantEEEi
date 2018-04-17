@@ -11,7 +11,13 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    //DatabaseHelper myDb;
+    //comment line above if checking
     private TextView mTextMessage;
+
+
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -40,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //myDb = new DatabaseHelper(this);
+        //comment line above if checking
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -47,15 +56,43 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+
+
         //Manually displaying the first fragment - one time only
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout, HomeFragment.newInstance());
         transaction.commit();
 
+
         //Used to select an item programmatically
         //bottomNavigationView.getMenu().getItem(2).setChecked(true);
 
+
+        /*Button BtnAddPlant = findViewById(R.id.BtnAddPlant);
+        BtnAddPlant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity();
+            }
+        });*/
+
     }
+
+
+    /*public void openActivity() {
+        Intent intent_AddPlant = new Intent(this, dummy.class);
+        startActivity(intent_AddPlant);
+    }*/
+
+    /*
+    public void openActivity(View view) {
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.container);
+        if (fragment != null && fragment.isVisible()) {
+            if (fragment instanceof HomeFragment) {
+                ((HomeFragment) fragment).onViewClicked(view);
+            }
+        }
+    }*/
 
 
 }

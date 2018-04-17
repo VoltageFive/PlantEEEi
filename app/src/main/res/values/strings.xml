@@ -8,4 +8,13 @@
         \nMature Height:\n\n\n
         Plant Facts:
     </string>
+    <!--For optional settings button in Add Plant page title bar-->
+    <string name="action_settings">Settings</string>
+
+    <!--Dummy Activity used for checking purposes-->
+    <string name="title_activity_dummy">dummy</string>
+
+    <!--
+    L
+    -->
 </resources>
