@@ -20,12 +20,15 @@
         </activity>
         <activity
             android:name=".AddPlant"
-            android:label="Add Plant">
-        </activity>
-        <!--<activity
+            android:label="Add Plant" />
+        <!--
+        <activity
             android:name=".dummy"
             android:label="dummy">
-        </activity>-->
+        </activity>
+        -->
+        <activity android:name=".Materials" />
+        <activity android:name=".PlantSteps"></activity>
     </application>
 
 </manifest>

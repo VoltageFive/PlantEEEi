@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class HomeFragment extends Fragment implements View.OnClickListener{
+public class HomeFragment extends Fragment {//implements View.OnClickListener{
 
     View view;
     FloatingActionButton BtnAddPlant;
@@ -31,36 +31,31 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.home_home, container, false);
         BtnAddPlant = view.findViewById(R.id.BtnAddPlant);
-        BtnAddPlant.setOnClickListener(this);
-
-        /*BtnAddPlant.setOnClickListener(new View.OnClickListener() {
+        BtnAddPlant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent_AddPlant = new Intent(getActivity(), AddPlant.class);
                 startActivity(intent_AddPlant);
             }
-        });*/
-
+        });
         return view;
     }
 
-    @Override
-    public void onClick(View view) {
-        openActivity();
-    }
-
-    public void openActivity() {
-        Intent intent_AddPlant = new Intent(getActivity(), AddPlant.class);
-        startActivity(intent_AddPlant);
-    }
-
     /*
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.home_home:
-                Intent intent_AddPlant = new Intent(getActivity(), AddPlant.class);
-                startActivity(intent_AddPlant);
-                break;
-        }
+    public  void AddData() {
+        btnAddData.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        boolean isInserted = myDb.insertData(editName.getText().toString(),
+                                editSurname.getText().toString(),
+                                editMarks.getText().toString() );
+                        if(isInserted == true)
+                            Toast.makeText(MainActivity.this,"Data Inserted",Toast.LENGTH_LONG).show();
+                        else
+                            Toast.makeText(MainActivity.this,"Data not Inserted",Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
     }*/
 }

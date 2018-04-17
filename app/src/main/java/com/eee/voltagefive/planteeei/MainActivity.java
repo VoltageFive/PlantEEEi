@@ -12,12 +12,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
-    //DatabaseHelper myDb;
+    DatabaseHelper myDb;
     //comment line above if checking
     private TextView mTextMessage;
-
-
-
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -46,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //myDb = new DatabaseHelper(this);
-        //comment line above if checking
+
+        //myDb = new DatabaseHelper(this); //create or open database and table
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -67,32 +64,6 @@ public class MainActivity extends AppCompatActivity {
         //Used to select an item programmatically
         //bottomNavigationView.getMenu().getItem(2).setChecked(true);
 
-
-        /*Button BtnAddPlant = findViewById(R.id.BtnAddPlant);
-        BtnAddPlant.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivity();
-            }
-        });*/
-
     }
-
-
-    /*public void openActivity() {
-        Intent intent_AddPlant = new Intent(this, dummy.class);
-        startActivity(intent_AddPlant);
-    }*/
-
-    /*
-    public void openActivity(View view) {
-        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.container);
-        if (fragment != null && fragment.isVisible()) {
-            if (fragment instanceof HomeFragment) {
-                ((HomeFragment) fragment).onViewClicked(view);
-            }
-        }
-    }*/
-
 
 }

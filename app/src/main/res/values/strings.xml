@@ -8,13 +8,46 @@
         \nMature Height:\n\n\n
         Plant Facts:
     </string>
+
+    <string name="row1">\n\nCarrots</string>
+    <string name="row2">\n\nEggPlant</string>
+    <string name="row3">\n\nOkra</string>
+    <string name="row4">\n\nOnion</string>
+    <string name="row5">\n\nTomatoes</string>
+
     <!--For optional settings button in Add Plant page title bar-->
     <string name="action_settings">Settings</string>
 
     <!--Dummy Activity used for checking purposes-->
     <string name="title_activity_dummy">dummy</string>
+    <string name="title_activity_materials">Materials</string>
 
-    <!--
-    ListView String Array
+    <!-- BeginnerProxy.java
+     ListView String Array
+    <string-array name="PlantListNames">
+        <item>Carrots</item>
+        <item>EggPlant</item>
+        <item>Okra</item>
+        <item>Onion</item>
+        <item>Tomatoes</item>
+    </string-array>
+
+     ListView Pictures
+    <array name="PlantListThumbs">
+        <item>@mipmap/ic_carrots</item>
+        <item>@mipmap/ic_eggplant</item>
+        <item>@mipmap/ic_okra</item>
+        <item>@mipmap/ic_onions</item>
+        <item>@mipmap/ic_tomatoes</item>
+    </array>
+
+     ListView Desc
+    <string-array name="PlantListDesc">
+        <item>Carrots</item>
+        <item>EggPlant</item>
+        <item>Okra</item>
+        <item>Onion</item>
+        <item>Tomatoes</item>
+    </string-array>
     -->
 </resources>
