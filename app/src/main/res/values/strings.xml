@@ -10,7 +10,14 @@
     </string>
 
     <string name="row1">\n\nCarrots</string>
-    <string name="row2">\n\nEggPlant</string>
+    <string name="row2">
+        <b>Name:</b> EggPlant \n
+        <p><b>Description:</b> The fruit is widely used in cooking. As a member of the genus Solanum,
+        it is related to the tomato and the potato. Eggplant is one of the many vegetables
+        you can grow in your garden, but the plant is very sensitive to cold.
+        Raw eggplant is composed of 92% water, 6% carbohydrates, 1% protein, and
+        negligible fat.</p>
+    </string>
     <string name="row3">\n\nOkra</string>
     <string name="row4">\n\nOnion</string>
     <string name="row5">\n\nTomatoes</string>
@@ -21,6 +28,15 @@
     <!--Dummy Activity used for checking purposes-->
     <string name="title_activity_dummy">dummy</string>
     <string name="title_activity_materials">Materials</string>
+
+    <string name="row2_step1">1.	Clean your containers</string>
+    <string name="row2_step2">
+        2.	Prepare soil. Mix 2 parts potting soil, 1 part sand. Mix a little compost and
+            5-10-5 fertilizer
+    </string>
+    <string name="row2_step3">
+        3.	Make a support system
+    </string>
 
     <!-- BeginnerProxy.java
      ListView String Array

@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        //myDb = new DatabaseHelper(this); //create or open database and table
+        myDb = new DatabaseHelper(this); //create or open database and table
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
