@@ -109,18 +109,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+    //@RequiresApi(api = Build.VERSION_CODES.O)
     public boolean insertData(String PlantName, String PlantSpecies) {
         //Date current_time = Calendar.getInstance().getTime();
         //long ms_since_epoch = (long) current_time;
-        Instant current_time = Instant.now();
-        long seconds_since_epoch = current_time.getEpochSecond();
+        //Instant current_time = Instant.now();
+        //long seconds_since_epoch = current_time.getEpochSecond();
+        //int i = (int) (new Date().getTime()/1000);
+        long current_time = System.currentTimeMillis();
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues new_plant_data = new ContentValues();
         new_plant_data.put(COL_1, PlantName);
         new_plant_data.put(COL_2, PlantSpecies);
-        new_plant_data.put(COL_3, seconds_since_epoch );
+        new_plant_data.put(COL_3, current_time);
         new_plant_data.put(COL_4,0);
         new_plant_data.put(COL_5,0);
         new_plant_data.put(COL_6,0);
