@@ -13,8 +13,8 @@
         android:layout_height="match_parent"
         android:background="@color/appbgcolor"
         tools:context="com.eee.voltagefive.planteeei.HomeFragment"
-        tools:layout_editor_absoluteX="match_parent"
-        tools:layout_editor_absoluteY="match_parent">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="74dp">
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/BtnAddPlant"
@@ -40,15 +40,15 @@
 
         <ImageView
             android:id="@+id/CurrentPlant"
-            android:layout_width="216dp"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_centerInParent="true"
             android:adjustViewBounds="false"
-            android:clickable="true"
+            android:clickable="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@mipmap/ic_mini" />
+            app:srcCompat="@mipmap/ic_normal" />
 
     </RelativeLayout>
 

@@ -9,10 +9,186 @@
         Plant Facts:
     </string>
 
-    <string name="row1">\n\nCarrots</string>
+
+
+    <!-- <Add Plant Section> -->
+    <string name="addplant_eggplant">Eggplant</string>
+    <string name="addplant_eggplant_mini_desc">
+        <p>Commonly used as a vegetable in dishes, but is, scientifically, actually, a fruit. The plant
+            is one of the many vegetables you can grow in your garden, however, it is <b> very sensitive
+                to cold</b>. Raw eggplant is composed of 92% water, 6% carbs, and 1% protein. </p>
+    </string>
+    <string name="addplant_kamote">Sweet Potato</string>
+    <string name="addplant_kamote_mini_desc">
+        <p>
+            To be continued...
+        </p>
+    </string>
+
+    <string name="addplant_soon">Plants Coming Soon !</string>
+    <!-- </Add Plant Section> -->
+
+
+
+    <!-- <Materials Section> -->
+        <!--Sweet Potato-->
+    <string name="mats_kamote_name">Name: \n\tSweet Potato</string>
+    <string name="mats_kamote_sname">Scientific Name: \n\tSolanum tuberosum</string>
+    <string name="mats_kamote_weeks">Weeks to grow: \n\t13-24 weeks</string>
+    <string name="mats_kamote_desc">
+        To be continued...
+    </string>
+    <string name="kamote_mats_1">Mature sweet potato</string>
+    <string name="kamote_mats_2">Container (jar)</string>
+    <string name="kamote_mats_3">Shallow bowl</string>
+    <string name="kamote_mats_4">Spading fork</string>
+    <string name="kamote_mats_5">Watering can</string>
+
+
+        <!--EggPlant-->
+    <string name="mats_eggplant_name">Name: \n\tEggplant</string>
+    <string name="mats_eggplant_sname">Scientific Name: \n\tSolanum melongena</string>
+    <string name="mats_eggplant_weeks">Weeks to grow: \n\t16-24 weeks</string>
+    <string name="mats_eggplant_desc">
+        <p> The fruit is widely used in cooking. As a member of the genus Solanum,
+            it is related to the tomato and the potato. Eggplant is one of the many vegetables
+                you can grow in your garden, but the plant is very sensitive to cold.
+                    Raw eggplant is composed of 92% water, 6% carbohydrates, 1% protein, and
+                        negligible fat.</p>
+    </string>
+    <string name="eggplant_mats_1">Small pots or trays</string>
+    <string name="eggplant_mats_2">Large pot for mature eggplant (20 Liter capacity at least, preferably clay pot)</string>
+    <string name="eggplant_mats_3">Potting soil</string>
+    <string name="eggplant_mats_4">Sand</string>
+    <string name="eggplant_mats_5">5-10-5 fertilizer</string>
+    <string name="eggplant_mats_6">Wooden Support System</string>
+    <string name="eggplant_mats_7">Gardening Trowel</string>
+    <!-- </Materials Section> -->
+
+
+
+    <!-- <Plant Steps> -->
+        <!-- Sweet Potato -->
+    <string name="kamote_steps_1">
+        Growing your slips (Day 0)
+        \n\t1. Clean the sweet potato and split it in half (or large sections).
+    </string>
+    <string name="kamote_steps_2">
+        \t2. Put them in a container with half of the potato submerged in water.
+    </string>
+    <string name="kamote_steps_3">
+        \t3. Put it in a window ledge or anywhere warm (e.g. on top of a radiator).
+    </string>
+    <string name="kamote_steps_4">
+        \t4. tObserve if the slips are 6-9 inches long everyday within the first 6 weeks of planting.
+    </string>
+    <string name="kamote_steps_5">\t5. Twist the slips off from the potato</string>
+    <string name="kamote_steps_6">
+        \t6. Transfer the slip to a shallow bowl with half the stem submerged in water.
+    </string>
+    <string name="kamote_steps_7">
+        \t7. Observe if the roots have grown about an inch and keep the water fresh (few days).
+    </string>
+    <string name="kamote_steps_8">
+        Transferring the Slips
+        \n\t8. Make sure the soil is loose
+    </string>
+    <string name="kamote_steps_9">
+        \t9. Using a small hand trowel, dig a hole about 4" or 5" deep and 3" wide. Place one slip
+                in each hole with the roots pointing down. Position the slip so that the bottom half
+                    will be covered with dirt while the top half with all of the new leaves is above
+                        ground.
+    </string>
+    <string name="kamote_steps_10">
+        \t10. Carefully cover the hole with soil and gently press (to remove remaining air pockets).
+    </string>
+    <string name="kamote_steps_11">
+        Growing the potatoes
+        \n\t11. Water until the surrounding dirt is wet. Stop watering before your mound starts
+                to erode.
+    </string>
+    <string name="kamote_steps_12">\t12. Water everyday (first week after planting).</string>
+    <string name="kamote_steps_13">\t13. Water every other day(second week).</string>
+    <string name="kamote_steps_14">\t14. Water twice a week(third week).</string>
+    <string name="kamote_steps_15">\t15. Water at least once a week (70-150 days).</string>
+    <string name="kamote_steps_16">
+        \t16. Check the soil everyday. Water the soil if it is dry.
+    </string>
+    <string name="kamote_steps_17">
+        Harvesting
+        \n\t17. Observe if leaves start to yellow(everyday).
+    </string>
+    <string name="kamote_steps_18">
+        \t18. Use a spading fork to dig tubers on a sunny day when the soil is dry.
+    </string>
+
+
+        <!-- Eggplant -->
+    <string name="eggplant_steps_1">1.\tClean your containers.</string>
+    <string name="eggplant_steps_2">
+        2.\tPrepare soil. Mix 2 parts potting soil, 1 part sand.
+                Mix a little compost and 5-10-5 fertilizer.
+    </string>
+    <string name="eggplant_steps_3">3.\tMake a support system.</string>
+    <string name="eggplant_steps_4">
+        4.\tStart indoors, temperature must be 12.8 C or higher. Fill your small pots or
+                trays with the potting mix.
+    </string>
+    <string name="eggplant_steps_5">
+        5.\tPoke a ½ inch (1.25 cm) hole in the center of each pot or tray. Place 2
+                seeds in each hole. Cover them afterwards, just lightly drop the soil
+                    over the seeds, don’t pack it in.
+    </string>
+    <string name="eggplant_steps_6">
+        6.\tSet the pots or trays out on a warm, sunny windowsill. Ensure that the window
+                receives at least 8 hours of sunlight a day.
+    </string>
+    <string name="eggplant_steps_7">
+        7.\tWater the seeds every day. Don’t create puddles of water on top of your soil but
+                prevent the soil from drying out.
+    </string>
+    <string name="eggplant_steps_8">
+        8.\tOnce the seedlings sprout two sets of leaves, snip out the weaker seedling, do not
+                yank the weaker seedling out.
+    </string>
+    <string name="eggplant_steps_9">
+        9.\tPrepare for transplanting once the plant reaches at least ½ foot (15.25 cm) in height.
+    </string>
+    <string name="eggplant_steps_10">
+        10.\tSet up the supporting stakes in the permanent pot.
+    </string>
+    <string name="eggplant_steps_11">
+        11.\tFill the permanent pot with the potting medium
+    </string>
+    <string name="eggplant_steps_12">
+        12.\tDig a hole in the center of the pot that is as deep and wide as the container the
+                seedlings are currently planted in.
+    </string>
+    <string name="eggplant_steps_13">
+        13.\tRemove the seedling from its container and place it into the new pot. It is easier to
+                transplant a wet and compact soil than dry, crumbly soil.
+    </string>
+    <string name="eggplant_steps_14">14.	Place the pot in a sunny location.</string>
+    <string name="eggplant_steps_15">
+        15.\tWater the plant daily. You might need to water additionally if the weather
+                is hot and dry
+    </string>
+    <string name="eggplant_steps_16">
+        16.\tAdd liquid fertilizer once every 2 weeks. Make sure you add fertilizer after watering
+            the soil, don’t add fertilizer on dry soil.
+    </string>
+    <string name="eggplant_steps_17">
+        17.\tTie the eggplant to the support to promote upward growth.
+    </string>
+    <string name="eggplant_steps_18">18.\tWatch out for pests.</string>
+    <string name="eggplant_steps_19">19.\tHarvest when the skin looks glossy.</string>
+    <!-- </Plant Steps> -->
+
+    <!-- Old Shit
+    <string name="row1">Carrots</string>
     <string name="row2">
         <b>Name:</b> EggPlant \n
-        <p><b>Description:</b> The fruit is widely used in cooking. As a member of the genus Solanum,
+        <p> The fruit is widely used in cooking. As a member of the genus Solanum,
         it is related to the tomato and the potato. Eggplant is one of the many vegetables
         you can grow in your garden, but the plant is very sensitive to cold.
         Raw eggplant is composed of 92% water, 6% carbohydrates, 1% protein, and
@@ -21,6 +197,7 @@
     <string name="row3">\n\nOkra</string>
     <string name="row4">\n\nOnion</string>
     <string name="row5">\n\nTomatoes</string>
+    -->
 
     <!--For optional settings button in Add Plant page title bar-->
     <string name="action_settings">Settings</string>
@@ -29,20 +206,6 @@
     <string name="title_activity_dummy">dummy</string>
     <string name="title_activity_materials">Materials</string>
 
-    <string name="row2_step1">1.	Clean your containers</string>
-    <string name="row2_step2">
-        2.	Prepare soil. Mix 2 parts potting soil, 1 part sand. Mix a little compost and
-            5-10-5 fertilizer
-    </string>
-    <string name="row2_step3">
-        3.	Make a support system
-        \n4.	Start indoors, temperature must be 12.8 C or higher. Fill your small pots or trays with the potting mix.
-\n5.	Poke a ½ inch (1.25 cm) hole in the center of each pot or tray. Place 2 seeds in each hole. Cover them afterwards, just lightly drop the soil over the seeds, don’t pack it in.
-\n6.	Set the pots or trays out on a warm, sunny windowsill. Ensure that the window receives at least 8 hours of sunlight a day.
-\n7.	Water the seeds every day. Don’t create puddles of water on top of your soil but prevent the soil from drying out.
-\n8.	Once the seedlings sprout two sets of leaves, snip out the weaker seedling, do not yank the weaker seedling out.
-
-    </string>
 
     <!-- BeginnerProxy.java
      ListView String Array

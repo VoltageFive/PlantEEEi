@@ -27,8 +27,11 @@
             android:label="dummy">
         </activity>
         -->
-        <activity android:name=".Materials" />
-        <activity android:name=".PlantSteps"></activity>
+        <activity android:name=".Materials"></activity>
+        <activity android:name=".PlantSteps"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+        <activity android:name=".PlantList"></activity>
     </application>
 
 </manifest>
