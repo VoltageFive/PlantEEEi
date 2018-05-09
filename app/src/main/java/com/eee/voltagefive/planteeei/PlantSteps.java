@@ -2,10 +2,13 @@ package com.eee.voltagefive.planteeei;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +28,16 @@ public class PlantSteps extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant_steps);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_plantsteps);
+        setSupportActionBar(toolbar);
+
+        /** Back button interferes with putExtra
+            ActionBar ab = getSupportActionBar();
+            // Enable the Up button
+            //Up Button is the Back Button
+            ab.setDisplayHomeAsUpEnabled(true);
+         */
+
         myDb = new DatabaseHelper(this);
 
         final String PlantSpecies = getIntent().getStringExtra("PlantSpecies");
@@ -36,6 +49,7 @@ public class PlantSteps extends AppCompatActivity {
         ImageView PlantThumbnail = findViewById(R.id.imageView_steps_plant);
         TextView Name = findViewById(R.id.textView_steps_name);
         TextView ScientificName = findViewById(R.id.textView_steps_sname);
+        TextView Weeks = findViewById(R.id.textView_steps_weeks);
         TextView step_1 = findViewById(R.id.textView_steps_1);
         TextView step_2 = findViewById(R.id.textView_steps_2);
         TextView step_3 = findViewById(R.id.textView_steps_3);
@@ -58,8 +72,9 @@ public class PlantSteps extends AppCompatActivity {
 
         if(Objects.equals(PlantSpecies, kamote)) {  /**Sweet Potato selected*/
             PlantThumbnail.setImageResource(R.mipmap.ic_kamote);
-            Name.setText(R.string.mats_kamote_name);
-            ScientificName.setText(R.string.mats_kamote_sname);
+            Name.setText(getText(R.string.mats_kamote_name));
+            ScientificName.setText(getText(R.string.mats_kamote_sname));
+            Weeks.setText(getText(R.string.mats_kamote_weeks));
             step_1.setText(R.string.kamote_steps_1);
             step_2.setText(R.string.kamote_steps_2);
             step_3.setText(R.string.kamote_steps_3);
@@ -81,8 +96,9 @@ public class PlantSteps extends AppCompatActivity {
             step_19.setVisibility(View.GONE);
         }else if(Objects.equals(PlantSpecies, eggplant)) {  /**Eggplant selected*/
             PlantThumbnail.setImageResource(R.mipmap.ic_eggplant);
-            Name.setText(R.string.mats_eggplant_name);
-            ScientificName.setText(R.string.mats_eggplant_sname);
+            Name.setText(getText(R.string.mats_eggplant_name));
+            ScientificName.setText(getText(R.string.mats_eggplant_sname));
+            Weeks.setText(getText(R.string.mats_eggplant_weeks));
             step_1.setText(R.string.eggplant_steps_1);
             step_2.setText(R.string.eggplant_steps_2);
             step_3.setText(R.string.eggplant_steps_3);
@@ -118,16 +134,37 @@ public class PlantSteps extends AppCompatActivity {
                     NoName.setGravity(Gravity.CENTER, 0, 450);
                     NoName.show();
                 }else{
-                    /**Check for existing names*/
-                    boolean isInserted = myDb.insertData(PlantName, PlantSpecies);
-                    if(isInserted == true){
-                        Intent plant_steps = new Intent(PlantSteps.this, MainActivity.class);
-                        startActivity(plant_steps);
+                    Cursor LimitCheck = myDb.get_all_info();
+
+                    /**10 Plant Limit*/
+                    if(LimitCheck.getCount() < 10){
+
+                        /**Check for existing names*/
+                        boolean isInserted = myDb.insertData(PlantName, PlantSpecies);
+                        if(isInserted == true){
+                            //Display Message
+                            Toast SameName = Toast.makeText(PlantSteps.this, "Plant has been added", Toast.LENGTH_LONG);
+                            SameName.setGravity(Gravity.CENTER, 0, 450);
+                            SameName.show();
+
+
+                            Intent plant_steps = new Intent(PlantSteps.this, MainActivity.class);
+                            finishAffinity();
+                            startActivity(plant_steps);
+                        }else{
+                            //Display Message
+                            Toast SameName = Toast.makeText(PlantSteps.this, "Plant Name already exists", Toast.LENGTH_LONG);
+                            SameName.setGravity(Gravity.CENTER, 0, 450);
+                            SameName.show();
+                        }
+
                     }else{
-                        Toast SameName = Toast.makeText(PlantSteps.this, "Plant Name already exists", Toast.LENGTH_LONG);
+                        //Display Message
+                        Toast SameName = Toast.makeText(PlantSteps.this, "Maximum Number of Plants reached! (Max is 10)", Toast.LENGTH_LONG);
                         SameName.setGravity(Gravity.CENTER, 0, 450);
                         SameName.show();
                     }
+
                 }
             }
         });

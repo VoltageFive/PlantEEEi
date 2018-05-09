@@ -2,7 +2,11 @@
 <resources>
     <color name="colorPrimary">#396510</color>
     <color name="colorPrimaryDark">#234702</color>
-    <color name="colorAccent">#fceac9</color>   <!--Lighter than app background color #dff6ca-->
+    <color name="colorAccent">#fceac9</color>
+    <color name="cardColor">#fceac9</color>        <!--Lighter than app background color #dff6ca-->
     <color name="appbgcolor">#b9d4a1</color>
     <color name="tabcolor">#9fd356</color>
+    <color name="wood">#6b4913</color>
+    <color name="progress">#76b5f4</color>
+    <color name="colorAccent2">#fa824c</color>
 </resources>

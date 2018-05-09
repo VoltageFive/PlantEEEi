@@ -17,20 +17,52 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".AddPlant"
-            android:label="Add Plant" />
-        <!--
+            android:label="@string/title_activity_addplant"
+            android:theme="@style/AppTheme"
+            android:parentActivityName="com.eee.voltagefive.planteeei.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eee.voltagefive.planteeei.AddPlant" />
+        </activity>
+
+        <activity android:name=".Materials"
+            android:label="@string/title_activity_materials"
+            android:theme="@style/AppTheme"
+            android:parentActivityName="com.eee.voltagefive.planteeei.AddPlant">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eee.voltagefive.planteeei.Materials" />
+
+        </activity>
+
         <activity
-            android:name=".dummy"
-            android:label="dummy">
+            android:name=".PlantSteps"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            android:label="@string/title_activity_plant_steps"
+            android:theme="@style/AppTheme"
+            android:parentActivityName="com.eee.voltagefive.planteeei.Materials">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eee.voltagefive.planteeei.PlantSteps" />
         </activity>
-        -->
-        <activity android:name=".Materials"></activity>
-        <activity android:name=".PlantSteps"
-            android:windowSoftInputMode="stateHidden|adjustPan">
+
+        <activity android:name=".PlantList" />
+
+        <activity android:name=".x_plant_statistic" />
+
+        <activity
+            android:name=".PlantStats"
+            android:label="@string/title_activity_plant_stats"
+            android:theme="@style/AppTheme"
+            android:parentActivityName="com.eee.voltagefive.planteeei.PlantStats">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eee.voltagefive.planteeei.PlantStats" />
+
         </activity>
-        <activity android:name=".PlantList"></activity>
     </application>
 
 </manifest>

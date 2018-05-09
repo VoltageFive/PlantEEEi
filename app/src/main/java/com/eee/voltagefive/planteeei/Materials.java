@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,8 +22,17 @@ public class Materials extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materials);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_materials);
+        setSupportActionBar(toolbar);
+
+        /** Back button interferes with putExtra
+            ActionBar ab = getSupportActionBar();
+            // Enable the Up button
+            //Up Button is the Back Button
+            ab.setDisplayHomeAsUpEnabled(true);
+         */
+
         final String PlantSpecies = getIntent().getStringExtra("PlantSpecies");
-        //final String PlantSpecies2 = getIntent().getStringExtra("PlantSpecies2");
 
         final String kamote = "Sweet Potato";
         final String eggplant = "Eggplant";
@@ -48,41 +59,39 @@ public class Materials extends AppCompatActivity {
 
         if(Objects.equals(PlantSpecies, kamote)){  /**Sweet Potato selected*/
             PlantThumbnail.setImageResource(R.mipmap.ic_kamote);
-            PlantName.setText(R.string.mats_kamote_name);
-            ScientificName.setText(R.string.mats_kamote_sname);
-            Weeks.setText(R.string.mats_kamote_weeks);
+            PlantName.setText(getText(R.string.mats_kamote_name));
+            ScientificName.setText(getText(R.string.mats_kamote_sname));
+            Weeks.setText(getText(R.string.mats_kamote_weeks));
             Description.setText(R.string.mats_kamote_desc);
             M1_pic.setImageResource(R.mipmap.ic_kamote);
             M1_name.setText(R.string.kamote_mats_1);
-            M2_pic.setImageResource(R.mipmap.ic_launcher);
+            M2_pic.setImageResource(R.mipmap.ic_jar);
             M2_name.setText(R.string.kamote_mats_2);
-            M3_pic.setImageResource(R.mipmap.ic_launcher);
+            M3_pic.setImageResource(R.mipmap.ic_shallowbowl);
             M3_name.setText(R.string.kamote_mats_3);
             M4_pic.setImageResource(R.mipmap.ic_spadingfork);
             M4_name.setText(R.string.kamote_mats_4);
             M5_pic.setImageResource(R.mipmap.ic_wateringcan);
             M5_name.setText(R.string.kamote_mats_5);
-            //M6_pic.setImageResource(0);
             M6_pic.setVisibility(View.GONE);
             M6_name.setVisibility(View.GONE);
-            //M7_pic.setImageResource(0);
             M7_pic.setVisibility(View.GONE);
             M7_name.setVisibility(View.GONE);
         }else if(Objects.equals(PlantSpecies, eggplant)){  /**Eggplant selected*/
             PlantThumbnail.setImageResource(R.mipmap.ic_eggplant);
-            PlantName.setText(R.string.mats_eggplant_name);
-            ScientificName.setText(R.string.mats_eggplant_sname);
-            Weeks.setText(R.string.mats_eggplant_weeks);
+            PlantName.setText(getText(R.string.mats_eggplant_name));
+            ScientificName.setText(getText(R.string.mats_eggplant_sname));
+            Weeks.setText(getText(R.string.mats_eggplant_weeks));
             Description.setText(R.string.mats_eggplant_desc);
-            M1_pic.setImageResource(R.mipmap.ic_planttray);
+            M1_pic.setImageResource(R.mipmap.ic_smallpot);
             M1_name.setText(R.string.eggplant_mats_1);
-            M2_pic.setImageResource(R.mipmap.ic_20lpot);
+            M2_pic.setImageResource(R.mipmap.ic_pot);
             M2_name.setText(R.string.eggplant_mats_2);
             M3_pic.setImageResource(R.mipmap.ic_soil);
             M3_name.setText(R.string.eggplant_mats_3);
             M4_pic.setImageResource(R.mipmap.ic_sand);
             M4_name.setText(R.string.eggplant_mats_4);
-            M5_pic.setImageResource(R.mipmap.ic_launcher);
+            M5_pic.setImageResource(R.mipmap.ic_fertilizer);
             M5_name.setText(R.string.eggplant_mats_5);
             M6_pic.setImageResource(R.mipmap.ic_woodensupport);
             M6_name.setText(R.string.eggplant_mats_6);

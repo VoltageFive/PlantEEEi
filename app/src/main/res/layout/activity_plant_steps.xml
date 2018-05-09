@@ -1,332 +1,385 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PlantSteps">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_plantsteps"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="8dp"
-        android:background="@color/appbgcolor"
-        android:orientation="vertical"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:layout_marginTop="55dp"
+        tools:context=".PlantSteps">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.5"
-            android:clipToPadding="false"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageView_steps_plant"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:srcCompat="@mipmap/ic_eggplant" />
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:background="@color/appbgcolor"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorAccent"
-                android:orientation="vertical">
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:clipToPadding="false"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView_steps_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <ImageView
+                    android:id="@+id/imageView_steps_plant"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif"
-                    android:text="@string/mats_eggplant_name"
-                    android:textColor="#000000" />
+                    android:padding="4dp"
+                    app:srcCompat="@mipmap/ic_eggplant" />
 
-                <TextView
-                    android:id="@+id/textView_steps_sname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="8dp"
                     android:layout_weight="1"
+                    app:cardBackgroundColor="@color/cardColor"
+                    app:cardCornerRadius="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView_steps_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="serif"
+                            android:padding="2dp"
+                            android:text="@string/mats_eggplant_name"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_sname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="serif"
+                            android:padding="2dp"
+                            android:text="@string/mats_eggplant_sname"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_weeks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="serif"
+                            android:padding="2dp"
+                            android:text="@string/mats_eggplant_weeks"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/borders_wood"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:text="How To Plant"
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                app:cardBackgroundColor="@color/cardColor"
+                app:cardCornerRadius="4dp">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@color/cardColor"
+                    tools:layout_editor_absoluteX="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView_steps_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_15"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_16"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_17"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_18"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView_steps_19"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textMultiLine"
+                            android:padding="8dp"
+                            android:text="TextView"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+                </ScrollView>
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editText_plant_name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="2.5"
+                    android:background="@drawable/borders_accent"
+                    android:ems="5"
                     android:fontFamily="sans-serif"
-                    android:text="@string/mats_eggplant_sname"
+                    android:hint="Name your Plant"
+                    android:inputType="textPersonName"
                     android:textColor="#000000"
-                    android:textSize="12dp" />
+                    tools:layout_editor_absoluteX="18dp"
+                    tools:layout_editor_absoluteY="523dp" />
 
-                <TextView
-                    android:id="@+id/textView_steps_weeks"
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/ButtonPlantSteps"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="sans-serif"
-                    android:text="@string/mats_eggplant_weeks"
-                    android:textColor="#000000"
-                    android:textSize="12dp" />
+                    android:layout_margin="4dp"
+                    android:layout_weight="1.5"
+                    android:background="@color/progress"
+                    android:ellipsize="start"
+                    android:fontFamily="casual"
+                    android:text="Plant Now"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.92"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.98" />
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingTop="16dp"
-            android:text="How To Plant"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:background="@color/colorAccent"
-            tools:layout_editor_absoluteX="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView_steps_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_11"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_13"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_14"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_15"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_16"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_17"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_18"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/textView_steps_19"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:text="TextView"
-                    android:textColor="#000000" />
-            </LinearLayout>
-        </ScrollView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/editText_plant_name"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="2.5"
-                android:background="#fceac9"
-                android:ems="5"
-                android:fontFamily="sans-serif"
-                android:hint="Name your Plant"
-                android:inputType="textPersonName"
-                android:textColor="#000000"
-                tools:layout_editor_absoluteX="18dp"
-                tools:layout_editor_absoluteY="523dp" />
-
-            <Button
-                android:id="@+id/ButtonPlantSteps"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1.5"
-                android:fontFamily="sans-serif"
-                android:text="Plant Now"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.92"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.98" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 public class HomeFragment extends Fragment {//implements View.OnClickListener{
 
 
@@ -29,8 +31,6 @@ public class HomeFragment extends Fragment {//implements View.OnClickListener{
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
-
     }
 
     @Override
@@ -38,43 +38,106 @@ public class HomeFragment extends Fragment {//implements View.OnClickListener{
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.home_home, container, false);
 
-        ImageView CurrentPlant = view.findViewById(R.id.CurrentPlant);
+        final ImageView CurrentPlant = view.findViewById(R.id.CurrentPlant);
         DatabaseHelper myDb = new DatabaseHelper(getActivity());
         Cursor isEmpty = myDb.get_all_info();
 
 
         if(isEmpty != null){
-            //no user_db exists yet
+            /**no user_db exists yet
+             * uses ic_sleep and displays toast message when clicked
+             */
             if(isEmpty.getCount() == 0) {
                 isEmpty.close();
-                CurrentPlant.setImageResource(R.mipmap.ic_sleep);
 
-                //Clickable Image
+                /** Image Drawable
+                 *  CurrentPlant.setImageResource(R.mipmap.ic_sleep);
+                 */
+
+                /**Gif Drawable*/
+                Glide.with(getActivity()).load(R.mipmap.gif_sleep).into(CurrentPlant);
                 CurrentPlant.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //LENGTH_LONG = duration of toast message
+                        /**LENGTH_LONG = duration of toast message*/
                         Toast NoPlants = Toast.makeText(getActivity(), "You don't have any plants yet!", Toast.LENGTH_LONG);
                         NoPlants.setGravity(Gravity.CENTER, 0, 450);
                         NoPlants.show();
                     }
                 });
             }else{
-                //user_db exists
-                isEmpty.close();
-                CurrentPlant.setImageResource(R.mipmap.ic_vhappy);
+                /**
+                 * user_db exists
+                 * change image based on happiness
+                 * displays relevant messages when clicked
+                 */
+                DatabaseHelper myDb2 = new DatabaseHelper(getActivity());
+                int happiness = myDb2.get_happiness();
 
-                CurrentPlant.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent_PlantList = new Intent(getActivity(), PlantList.class);
-                        startActivity(intent_PlantList);
-                    }
-                });
+                if(happiness <= 25){
+                    CurrentPlant.setImageResource(R.mipmap.ic_angry);
+
+                    CurrentPlant.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            /**LENGTH_LONG = duration of toast message*/
+                            Toast NoPlants = Toast.makeText(getActivity(), "You're neglecting me!", Toast.LENGTH_LONG);
+                            NoPlants.setGravity(Gravity.CENTER, 0, 450);
+                            NoPlants.show();
+                        }
+                    });
+                }else if((happiness > 25) && (happiness <= 50)){
+                    CurrentPlant.setImageResource(R.mipmap.ic_sad);
+
+                    CurrentPlant.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            /**LENGTH_LONG = duration of toast message*/
+                            Toast NoPlants = Toast.makeText(getActivity(), "Please take care of me...", Toast.LENGTH_LONG);
+                            NoPlants.setGravity(Gravity.CENTER, 0, 450);
+                            NoPlants.show();
+                        }
+                    });
+                }else if((happiness > 50) && (happiness <= 75)){
+                    /**Image Drawable
+                     * CurrentPlant.setImageResource(R.mipmap.ic_normal);
+                     */
+
+                    /**Gif Drawable*/
+                    Glide.with(getActivity()).load(R.mipmap.gif_normal).into(CurrentPlant);
+                    CurrentPlant.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            /**LENGTH_LONG = duration of toast message*/
+                            Toast NoPlants = Toast.makeText(getActivity(), "Thanks for taking care of me :)", Toast.LENGTH_LONG);
+                            NoPlants.setGravity(Gravity.CENTER, 0, 450);
+                            NoPlants.show();
+                        }
+                    });
+                }else if(happiness > 75){
+
+                    /** Image Drawable
+                     *  CurrentPlant.setImageResource(R.mipmap.ic_vhappy);
+                     */
+
+                    /**Gif Drawable*/
+                    Glide.with(getActivity()).load(R.mipmap.gif_vhappy).into(CurrentPlant);
+                    CurrentPlant.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            /**LENGTH_LONG = duration of toast message*/
+                            Toast NoPlants = Toast.makeText(getActivity(), "You must be the best gardener out there!", Toast.LENGTH_LONG);
+                            NoPlants.setGravity(Gravity.CENTER, 0, 450);
+                            NoPlants.show();
+                        }
+                    });
+                }
 
             }
         }
+        //isEmpty.close();
 
+        /**Button for adding a plant*/
         BtnAddPlant = view.findViewById(R.id.BtnAddPlant);
         BtnAddPlant.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,21 +149,4 @@ public class HomeFragment extends Fragment {//implements View.OnClickListener{
         return view;
     }
 
-    /*
-    public  void AddData() {
-        btnAddData.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        boolean isInserted = myDb.insertData(editName.getText().toString(),
-                                editSurname.getText().toString(),
-                                editMarks.getText().toString() );
-                        if(isInserted == true)
-                            Toast.makeText(MainActivity.this,"Data Inserted",Toast.LENGTH_LONG).show();
-                        else
-                            Toast.makeText(MainActivity.this,"Data not Inserted",Toast.LENGTH_LONG).show();
-                    }
-                }
-        );
-    }*/
 }
