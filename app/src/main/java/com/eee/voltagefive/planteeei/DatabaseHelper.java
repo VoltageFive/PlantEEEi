@@ -236,7 +236,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             old_time = 0;
 
         db.execSQL("update " + TABLE_NAME1 + " set " + COL_5 + " = " + old_time + " where " + COL_1 + " ='" + PlantName + "'");
-        update_happiness(-2);
+        update_happiness(-5);
     }
 
     public String get_step(String Species, int step_number){

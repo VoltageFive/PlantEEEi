@@ -63,6 +63,8 @@
                 android:value="com.eee.voltagefive.planteeei.PlantStats" />
 
         </activity>
+
+        <receiver android:name=".AlarmReceiver"/>
     </application>
 
 </manifest>

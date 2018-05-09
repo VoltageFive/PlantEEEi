@@ -75,7 +75,12 @@ public class HomeFragment extends Fragment {//implements View.OnClickListener{
                 int happiness = myDb2.get_happiness();
 
                 if(happiness <= 25){
-                    CurrentPlant.setImageResource(R.mipmap.ic_angry);
+                    /**Image Drawable
+                     * CurrentPlant.setImageResource(R.mipmap.ic_angry);
+                     */
+
+                    /**Gif Drawable*/
+                    Glide.with(getActivity()).load(R.mipmap.gif_angry).into(CurrentPlant);
 
                     CurrentPlant.setOnClickListener(new View.OnClickListener() {
                         @Override
