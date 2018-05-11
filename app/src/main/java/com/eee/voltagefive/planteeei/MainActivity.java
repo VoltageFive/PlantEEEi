@@ -19,9 +19,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    public static MainActivity MyMainContext;
     DatabaseHelper myDb;
-    //comment line above if checking
     private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -52,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        MyMainContext = this;
 
         myDb = new DatabaseHelper(this); //create or open database and table
 

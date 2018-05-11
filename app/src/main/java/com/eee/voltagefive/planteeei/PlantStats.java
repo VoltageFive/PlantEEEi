@@ -57,9 +57,13 @@ public class PlantStats extends AppCompatActivity {
         if(plant_data != null && plant_data.moveToFirst()) {
             final String PlantSpecies = plant_data.getString(plant_data.getColumnIndex("Plant_Species"));
             final int current_step = plant_data.getInt(plant_data.getColumnIndex("Current_Step"));
+            final int time_created = plant_data.getInt(plant_data.getColumnIndex("Time_Created"));
+
 
             final RingProgressBar pb = findViewById(R.id.pb_stats);
-            if (PlantSpecies.equals("Eggplant") || PlantSpecies.equals("Sweet Potato"))
+            if(PlantSpecies.equals("Sweet Potato"))
+                pb.setMax(14);
+            else if(PlantSpecies.equals("Eggplant"))
                 pb.setMax(15);
             else pb.setMax(100);
 
@@ -71,7 +75,7 @@ public class PlantStats extends AppCompatActivity {
                             Thread.sleep(50);
                             pb.setProgress(i);
                         }catch(InterruptedException e){
-                            pb.setProgress(current_step);
+                            pb.setProgress(current_step-1);
                         }
 
                     }
@@ -87,7 +91,10 @@ public class PlantStats extends AppCompatActivity {
             String step1 = db_helper.get_step(PlantSpecies,current_step);
             String step2 = db_helper.get_step(PlantSpecies,current_step + 1);
             String step3 = db_helper.get_step(PlantSpecies,current_step + 2);
-            next_steps.setText(step1 + '\n' + '\n' + step2 + '\n' + '\n' + step3 + '\n');
+            final int cs1 = current_step;
+            final int cs2 = current_step + 1;
+            final int cs3 = current_step + 2;
+            next_steps.setText(cs1 + ". " + step1 + '\n' + '\n' + cs2 + ". " + step2 + '\n' + '\n' + cs3 + ". " + step3 + '\n');
 
             if( (PlantSpecies.equals("Eggplant") && (current_step == 8 || current_step == 15) ) ||
                     ((PlantSpecies.equals("Sweet Potato")) && (current_step == 3 || current_step == 6
@@ -97,11 +104,15 @@ public class PlantStats extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        int numberofsecs = 10; //change to 24hrs, 10s for testing purposes
+                        int numberofsecs = 86400; //change to 24hrs, 10s for testing purposes
                         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
                         Intent notificationIntent = new Intent(PlantStats.this, AlarmReceiver.class);
-                        PendingIntent broadcast = PendingIntent.getBroadcast(PlantStats.this, 100, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                        notificationIntent.putExtra("id", time_created);
+                        notificationIntent.putExtra("id", time_created);
+                        notificationIntent.putExtra("species", PlantSpecies);
+                        notificationIntent.putExtra("name", PlantName);
+                        PendingIntent broadcast = PendingIntent.getBroadcast(PlantStats.this, time_created, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
                         Calendar cal = Calendar.getInstance();
                         cal.add(Calendar.SECOND, numberofsecs);
@@ -124,12 +135,15 @@ public class PlantStats extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     DatabaseHelper db = new DatabaseHelper(PlantStats.this);
-                    long variable_time = db.time_til_next_notif(PlantSpecies,current_step);
-                    db.done_step(PlantName,PlantSpecies,current_step);
+                    long variable_time = db.time_til_next_notif(PlantSpecies, current_step);
+                    db.done_step(PlantName, PlantSpecies, current_step);
                     AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
                     Intent notificationIntent = new Intent(PlantStats.this, AlarmReceiver.class);
-                    PendingIntent broadcast = PendingIntent.getBroadcast(PlantStats.this, 100, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                    notificationIntent.putExtra("id", time_created);
+                    notificationIntent.putExtra("species", PlantSpecies);
+                    notificationIntent.putExtra("name", PlantName);
+                    PendingIntent broadcast = PendingIntent.getBroadcast(PlantStats.this, time_created, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
                     Calendar cal = Calendar.getInstance();
                     cal.add(Calendar.SECOND, (int)variable_time);

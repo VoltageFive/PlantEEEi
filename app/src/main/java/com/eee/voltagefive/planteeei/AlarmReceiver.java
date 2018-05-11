@@ -9,6 +9,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.text.Html;
 
 import static android.app.NotificationManager.IMPORTANCE_DEFAULT;
 
@@ -18,6 +19,9 @@ public class AlarmReceiver extends BroadcastReceiver{
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        int id = intent.getIntExtra("id", 0);
+        final String PlantSpecies = intent.getStringExtra("species");
+        final String PlantName = intent.getStringExtra("name");
         Intent notificationIntent = new Intent(context, MainActivity.class);
         notificationIntent.putExtra("Context", "List");
 
@@ -30,8 +34,8 @@ public class AlarmReceiver extends BroadcastReceiver{
         Notification.Builder builder = new Notification.Builder(context);
 
         Notification notification = builder.setContentTitle("PlantEEEI Notification")
-                .setContentText("You have an unfinished task!")
-                .setTicker("New Message Alert!")
+                .setContentText(Html.fromHtml("Your "+PlantSpecies+" named <b> "+PlantName+" </b>  needs attention!"))
+                .setTicker("A plant needs you!")
                 .setSmallIcon(R.mipmap.ic_logo)
                 .setContentIntent(pendingIntent).build();
 
@@ -51,6 +55,6 @@ public class AlarmReceiver extends BroadcastReceiver{
             notificationManager.createNotificationChannel(channel);
         }
 
-        notificationManager.notify(0, notification);
+        notificationManager.notify(id, notification);
     }
 }

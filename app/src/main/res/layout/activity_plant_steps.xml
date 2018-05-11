@@ -55,56 +55,61 @@
                     android:padding="4dp"
                     app:srcCompat="@mipmap/ic_eggplant" />
 
-                <android.support.v7.widget.CardView
+                <ScrollView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="4dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/cardColor"
-                    app:cardCornerRadius="4dp">
+                    android:layout_weight="1">
 
-                    <LinearLayout
+                    <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="4dp"
-                        android:orientation="vertical">
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginTop="8dp"
+                        app:cardBackgroundColor="@color/cardColor"
+                        app:cardCornerRadius="4dp">
 
-                        <TextView
-                            android:id="@+id/textView_steps_name"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:fontFamily="serif"
-                            android:padding="2dp"
-                            android:text="@string/mats_eggplant_name"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textView_steps_sname"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:fontFamily="serif"
-                            android:padding="2dp"
-                            android:text="@string/mats_eggplant_sname"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
+                            <TextView
+                                android:id="@+id/textView_steps_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="serif"
+                                android:padding="2dp"
+                                android:text="@string/mats_eggplant_name"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
 
-                        <TextView
-                            android:id="@+id/textView_steps_weeks"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:fontFamily="serif"
-                            android:padding="2dp"
-                            android:text="@string/mats_eggplant_weeks"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
+                            <TextView
+                                android:id="@+id/textView_steps_sname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="serif"
+                                android:padding="2dp"
+                                android:text="@string/mats_eggplant_sname"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
 
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
+                            <TextView
+                                android:id="@+id/textView_steps_weeks"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="serif"
+                                android:padding="2dp"
+                                android:text="@string/mats_eggplant_weeks"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+                </ScrollView>
 
             </LinearLayout>
 

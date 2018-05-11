@@ -3,11 +3,6 @@
     <string name="home_home">Home</string>
     <string name="home_about">About</string>
     <string name="home_list">Plant List</string>
-    <string name="TextViewPlantName">Plant Name</string>
-    <string name="TextViewPlantDesc">
-        \nMature Height:\n\n\n
-        Plant Facts:
-    </string>
 
 
     <!-- <Add Plant Section> -->
@@ -182,13 +177,38 @@ Throughout Asia, people process sweet potato for snacks such as chips or animal 
 
 
     <!-- About -->
-    <string name="textView_about">
+    <string name="textView_app_about">
         \t<b>PlantEEEI</b> is an app that would assist its users, especially beginners, in planting. It would provide information on a number of species of plants and steps on taking care of the said species of plants among other things.
 
         \n\n\tThe app aims to encourage people to plant and/or grow fruits and vegetables, which can be used for their own consumption, to promote a greener household environment and, also, possibly, a better state of physical and mental health.
     </string>
 
     <string name="action_delete_plant">Delete Plant</string>
+    <string name="dev1">
+        \t\tMichael Angelo Asuncion
+        \n\n\t\tBackend Developer
+    </string>
+    <string name="dev2">
+        \t\tSean Michael Calingasan
+        \n\n\t\tBackend Developer
+    </string>
+    <string name="dev3">
+        \t\tMariam Paul Misagal
+        \n\n\t\tFrontend Developer
+    </string>
+    <string name="dev4">
+        \t\tEyanne Kyle Ranjo
+        \n\n\t\tFrontend Developer
+    </string>
+    <string name="about_dev">
+        \tThe Developer team consists of four members, all currently taking BS Computer Engineering as their degree program in the University of the Philippines-Diliman.
+    </string>
+    <string name="app_version">
+        PlantEEEi Version 1.0
+        \n\u00A9 All Rights Reserved 2018
+    </string>
+
+
 
     <!-- Used for PlantStats Action Bar -->
 
@@ -197,5 +217,6 @@ Throughout Asia, people process sweet potato for snacks such as chips or animal 
     <string name="title_activity_plant_stats">Plant Stats</string>
     <string name="title_activity_addplant">Add Plant</string>
     <string name="title_activity_plant_steps">Plant Steps</string>
+
 
 </resources>

@@ -51,10 +51,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             " Add liquid fertilizer once every 2 weeks. Make sure you add fertilizer after watering the soil, don’t add fertilizer on dry soil." +
             " Tie the eggplant to the support to promote upward growth.";
     public static final String EGGPLANT_STEP_16 = "Harvest when the skin looks glossy.";
-    //public static final long EGGPLANT_STEP_9_TIME = 3628800;
-    public static final long EGGPLANT_STEP_9_TIME = 5; //for testing purposes
-    //public static final long EGGPLANT_STEP_16_TIME = 5011200;
-    public static final long EGGPLANT_STEP_16_TIME = 10; //for testing purposes
+    public static final long EGGPLANT_STEP_9_TIME = 3628800;
+    //public static final long EGGPLANT_STEP_9_TIME = 5; //for testing purposes
+    public static final long EGGPLANT_STEP_16_TIME = 5011200;
+    //public static final long EGGPLANT_STEP_16_TIME = 10; //for testing purposes
 
     public static final String SWEET_POTATO_STEP_1 = "Clean the sweet potato and split it in half (or large sections)";
     public static final String SWEET_POTATO_STEP_2 = "Put them in a container with half of the potato submerged in water";
@@ -161,7 +161,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     break;
                 case 15: res = EGGPLANT_STEP_16_TIME;
                     break;
-                default: res = 0;
+                default: res = 10;
             }
         }
         else if(Species.equals("Sweet Potato")){
@@ -178,7 +178,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     break;
                 case 14: res = SWEET_POTATO_STEP_15_TIME;
                     break;
-                default: res = 0;
+                default: res = 10;
             }
         }
 
@@ -231,7 +231,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         Cursor time = db.rawQuery("select " + COL_5 + " from " + TABLE_NAME1 + " where " + COL_1 + " ='" + PlantName + "'",null);
         if(time.moveToFirst())
-            old_time = time.getLong(0) + 86400;
+            old_time = time.getLong(0) + 86400;     //1 day
         else
             old_time = 0;
 

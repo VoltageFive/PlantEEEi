@@ -123,27 +123,24 @@ public class ListFragment extends Fragment {
                     PlantImage[i].setOnLongClickListener(new View.OnLongClickListener() {
                         @Override
                         public boolean onLongClick(View view) {
-                            AlertDialog.Builder DialogBox = new AlertDialog.Builder(getActivity());
+                            AlertDialog.Builder DialogBox = new AlertDialog.Builder(MainActivity.MyMainContext);
                             DialogBox.setTitle(Html.fromHtml("<b>Delete Plant</b>"));
                             DialogBox.setMessage(Html.fromHtml("Do you want to delete your plant named <b>" + boo + "</b>?"));
+
+                            final DatabaseHelper DbDel = new DatabaseHelper(getActivity());
 
                             /**Confirmation Message for plant deletion*/
                             DialogBox.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    DatabaseHelper DbDel = new DatabaseHelper(getActivity());
-                                    final Cursor DbInfo = DbDel.get_all_info();
-                                    DbInfo.moveToNext();
-                                    final String PlantName = DbInfo.getString(0);
-                                    DbDel.deleteData(PlantName);
-                                    DbInfo.close();
+                                    DbDel.deleteData(boo);
                                     Intent reset = new Intent(getActivity(), MainActivity.class);
                                     reset.putExtra("Context", "List");
                                     startActivity(reset);
                                 }
                             });
                             DialogBox.setNegativeButton("No", null);
-                            DialogBox.show();
+                            DialogBox.create().show();
 
                             return false;
                         }
@@ -152,27 +149,24 @@ public class ListFragment extends Fragment {
                     PlantInfo[i].setOnLongClickListener(new View.OnLongClickListener() {
                         @Override
                         public boolean onLongClick(View view) {
-                            AlertDialog.Builder DialogBox = new AlertDialog.Builder(getActivity());
+                            AlertDialog.Builder DialogBox = new AlertDialog.Builder(MainActivity.MyMainContext);
                             DialogBox.setTitle(Html.fromHtml("<b>Delete Plant</b>"));
                             DialogBox.setMessage(Html.fromHtml("Do you want to delete your plant named <b>" + boo + "</b>?"));
+
+                            final DatabaseHelper DbDel = new DatabaseHelper(getActivity());
 
                             /**Confirmation Message for plant deletion*/
                             DialogBox.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    DatabaseHelper DbDel = new DatabaseHelper(getActivity());
-                                    final Cursor DbInfo = DbDel.get_all_info();
-                                    DbInfo.moveToNext();
-                                    final String PlantName = DbInfo.getString(0);
-                                    DbDel.deleteData(PlantName);
-                                    DbInfo.close();
+                                    DbDel.deleteData(boo);
                                     Intent reset = new Intent(getActivity(), MainActivity.class);
                                     reset.putExtra("Context", "List");
                                     startActivity(reset);
                                 }
                             });
                             DialogBox.setNegativeButton("No", null);
-                            DialogBox.show();
+                            DialogBox.create().show();
 
                             return false;
                         }
@@ -189,6 +183,8 @@ public class ListFragment extends Fragment {
                     i++;
                 }
 
+                all_plant_info.close();
+
                 while(i != 10){
                     PlantImage[i] = view.findViewById(imageView_IDs[i]);
                     PlantInfo[i] = view.findViewById(textView_IDs[i]);
@@ -200,7 +196,7 @@ public class ListFragment extends Fragment {
 
             }
         }
-        all_plant_info.close();
+
         return view;
 
     }

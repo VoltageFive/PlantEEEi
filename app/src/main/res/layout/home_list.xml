@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/list_layout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:background="@color/appbgcolor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/CardView_list_1"
@@ -79,8 +79,7 @@
                             android:inputType="textMultiLine"
                             android:padding="4dp"
                             android:text="TextView"
-                            android:textColor="#000000"
-                            android:textSize="18sp" />
+                            android:textColor="#000000" />
 
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -110,12 +109,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/borders_plain"
+                            android:fontFamily="sans-serif"
                             android:gravity="center"
                             android:inputType="textMultiLine"
-                            android:fontFamily="sans-serif"
                             android:padding="4dp"
                             android:text="TextView"
-                            android:textSize="18sp"
                             android:textColor="#000000" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -145,12 +143,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/borders_plain"
+                            android:fontFamily="sans-serif"
                             android:gravity="center"
                             android:inputType="textMultiLine"
                             android:padding="4dp"
                             android:text="TextView"
-                            android:fontFamily="sans-serif"
-                            android:textSize="18sp"
                             android:textColor="#000000" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -180,12 +177,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/borders_plain"
+                            android:fontFamily="sans-serif"
                             android:gravity="center"
                             android:inputType="textMultiLine"
-                            android:fontFamily="sans-serif"
                             android:padding="4dp"
                             android:text="TextView"
-                            android:textSize="18sp"
                             android:textColor="#000000" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -215,12 +211,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/borders_plain"
+                            android:fontFamily="sans-serif"
                             android:gravity="center"
                             android:inputType="textMultiLine"
-                            android:fontFamily="sans-serif"
                             android:padding="4dp"
                             android:text="TextView"
-                            android:textSize="18sp"
                             android:textColor="#000000" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -250,12 +245,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/borders_plain"
+                            android:fontFamily="sans-serif"
                             android:gravity="center"
                             android:inputType="textMultiLine"
-                            android:fontFamily="sans-serif"
                             android:padding="4dp"
                             android:text="TextView"
-                            android:textSize="18sp"
                             android:textColor="#000000" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -285,12 +279,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/borders_plain"
+                            android:fontFamily="sans-serif"
                             android:gravity="center"
                             android:inputType="textMultiLine"
-                            android:fontFamily="sans-serif"
                             android:padding="4dp"
                             android:text="TextView"
-                            android:textSize="18sp"
                             android:textColor="#000000" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -320,12 +313,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/borders_plain"
+                            android:fontFamily="sans-serif"
                             android:gravity="center"
                             android:inputType="textMultiLine"
-                            android:fontFamily="sans-serif"
                             android:padding="4dp"
                             android:text="TextView"
-                            android:textSize="18sp"
                             android:textColor="#000000" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -355,12 +347,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/borders_plain"
+                            android:fontFamily="sans-serif"
                             android:gravity="center"
                             android:inputType="textMultiLine"
-                            android:fontFamily="sans-serif"
                             android:padding="4dp"
                             android:text="TextView"
-                            android:textSize="18sp"
                             android:textColor="#000000" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -390,12 +381,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/borders_plain"
-                            android:gravity="center"
                             android:fontFamily="sans-serif"
+                            android:gravity="center"
                             android:inputType="textMultiLine"
                             android:padding="4dp"
                             android:text="TextView"
-                            android:textSize="18sp"
                             android:textColor="#000000" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
