@@ -66,7 +66,7 @@
                             android:id="@+id/imageView_list_1"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            app:srcCompat="@mipmap/ic_angry" />
+                            app:srcCompat="@mipmap/ic_sad" />
 
                         <TextView
                             android:id="@+id/textView_list_1"
@@ -102,7 +102,7 @@
                             android:id="@+id/imageView_list_2"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            app:srcCompat="@mipmap/ic_angry" />
+                            app:srcCompat="@mipmap/ic_sad" />
 
                         <TextView
                             android:id="@+id/textView_list_2"
@@ -136,7 +136,7 @@
                             android:id="@+id/imageView_list_3"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            app:srcCompat="@mipmap/ic_angry" />
+                            app:srcCompat="@mipmap/ic_sad" />
 
                         <TextView
                             android:id="@+id/textView_list_3"
@@ -170,7 +170,7 @@
                             android:id="@+id/imageView_list_4"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            app:srcCompat="@mipmap/ic_angry" />
+                            app:srcCompat="@mipmap/ic_sad" />
 
                         <TextView
                             android:id="@+id/textView_list_4"
@@ -204,7 +204,7 @@
                             android:id="@+id/imageView_list_5"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            app:srcCompat="@mipmap/ic_angry" />
+                            app:srcCompat="@mipmap/ic_sad" />
 
                         <TextView
                             android:id="@+id/textView_list_5"
@@ -238,7 +238,7 @@
                             android:id="@+id/imageView_list_6"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            app:srcCompat="@mipmap/ic_angry" />
+                            app:srcCompat="@mipmap/ic_sad" />
 
                         <TextView
                             android:id="@+id/textView_list_6"
@@ -272,7 +272,7 @@
                             android:id="@+id/imageView_list_7"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            app:srcCompat="@mipmap/ic_angry" />
+                            app:srcCompat="@mipmap/ic_sad" />
 
                         <TextView
                             android:id="@+id/textView_list_7"
@@ -306,7 +306,7 @@
                             android:id="@+id/imageView_list_8"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            app:srcCompat="@mipmap/ic_angry" />
+                            app:srcCompat="@mipmap/ic_sad" />
 
                         <TextView
                             android:id="@+id/textView_list_8"
@@ -340,7 +340,7 @@
                             android:id="@+id/imageView_list_9"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            app:srcCompat="@mipmap/ic_angry" />
+                            app:srcCompat="@mipmap/ic_sad" />
 
                         <TextView
                             android:id="@+id/textView_list_9"
@@ -374,7 +374,7 @@
                             android:id="@+id/imageView_list_10"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            app:srcCompat="@mipmap/ic_angry" />
+                            app:srcCompat="@mipmap/ic_sad" />
 
                         <TextView
                             android:id="@+id/textView_list_10"

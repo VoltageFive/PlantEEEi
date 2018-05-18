@@ -31,13 +31,6 @@ public class PlantSteps extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_plantsteps);
         setSupportActionBar(toolbar);
 
-        /** Back button interferes with putExtra
-            ActionBar ab = getSupportActionBar();
-            // Enable the Up button
-            //Up Button is the Back Button
-            ab.setDisplayHomeAsUpEnabled(true);
-         */
-
         myDb = new DatabaseHelper(this);
 
         final String PlantSpecies = getIntent().getStringExtra("PlantSpecies");

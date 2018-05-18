@@ -25,13 +25,6 @@ public class Materials extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_materials);
         setSupportActionBar(toolbar);
 
-        /** Back button interferes with putExtra
-            ActionBar ab = getSupportActionBar();
-            // Enable the Up button
-            //Up Button is the Back Button
-            ab.setDisplayHomeAsUpEnabled(true);
-         */
-
         final String PlantSpecies = getIntent().getStringExtra("PlantSpecies");
 
         final String kamote = "Sweet Potato";

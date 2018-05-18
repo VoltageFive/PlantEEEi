@@ -15,16 +15,8 @@ public class AddPlant extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addplant);
 
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_addplant);
         setSupportActionBar(toolbar);
-
-        /** Back button interferes with putExtra
-            ActionBar ab = getSupportActionBar();
-            // Enable the Up button
-            //Up Button is the Back Button
-            ab.setDisplayHomeAsUpEnabled(true);
-         */
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Beginner"));

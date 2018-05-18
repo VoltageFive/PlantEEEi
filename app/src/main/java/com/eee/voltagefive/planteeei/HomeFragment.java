@@ -45,14 +45,10 @@ public class HomeFragment extends Fragment {//implements View.OnClickListener{
 
         if(isEmpty != null){
             /**no user_db exists yet
-             * uses ic_sleep and displays toast message when clicked
+             * uses gif_sleep and displays toast message when clicked
              */
             if(isEmpty.getCount() == 0) {
                 isEmpty.close();
-
-                /** Image Drawable
-                 *  CurrentPlant.setImageResource(R.mipmap.ic_sleep);
-                 */
 
                 /**Gif Drawable*/
                 Glide.with(getActivity()).load(R.mipmap.gif_sleep).into(CurrentPlant);
@@ -75,13 +71,9 @@ public class HomeFragment extends Fragment {//implements View.OnClickListener{
                 int happiness = myDb2.get_happiness();
 
                 if(happiness <= 25){
-                    /**Image Drawable
-                     * CurrentPlant.setImageResource(R.mipmap.ic_angry);
-                     */
 
                     /**Gif Drawable*/
                     Glide.with(getActivity()).load(R.mipmap.gif_angry).into(CurrentPlant);
-
                     CurrentPlant.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -104,9 +96,6 @@ public class HomeFragment extends Fragment {//implements View.OnClickListener{
                         }
                     });
                 }else if((happiness > 50) && (happiness <= 75)){
-                    /**Image Drawable
-                     * CurrentPlant.setImageResource(R.mipmap.ic_normal);
-                     */
 
                     /**Gif Drawable*/
                     Glide.with(getActivity()).load(R.mipmap.gif_normal).into(CurrentPlant);
@@ -120,10 +109,6 @@ public class HomeFragment extends Fragment {//implements View.OnClickListener{
                         }
                     });
                 }else if(happiness > 75){
-
-                    /** Image Drawable
-                     *  CurrentPlant.setImageResource(R.mipmap.ic_vhappy);
-                     */
 
                     /**Gif Drawable*/
                     Glide.with(getActivity()).load(R.mipmap.gif_vhappy).into(CurrentPlant);
@@ -140,7 +125,6 @@ public class HomeFragment extends Fragment {//implements View.OnClickListener{
 
             }
         }
-        //isEmpty.close();
 
         /**Button for adding a plant*/
         BtnAddPlant = view.findViewById(R.id.BtnAddPlant);

@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //Manually displaying the first fragment - one time only
+        //Go back to Plant List upon deleting a plant
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         if(getIntent().getStringExtra("Context") != null) {
             navigation.getMenu().getItem(1).setChecked(true);
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
          * navigation.getMenu().getItem(x).setChecked(true);
          *
          * replace x with 1, 2, 3 where in this case:
-         * 0 - home (default)
+         * 0 - Home (default)
          * 1 - List
          * 2 - About
          *
@@ -89,6 +89,9 @@ public class MainActivity extends AppCompatActivity {
          */
     }
 
+    /**
+     *  Alert Dialog for Back Button Press
+     */
     @Override
     public void onBackPressed() {
         AlertDialog.Builder DialogBox = new AlertDialog.Builder(this);

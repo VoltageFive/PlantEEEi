@@ -26,6 +26,8 @@ import java.util.Calendar;
 import org.w3c.dom.Text;
 import io.netopen.hotbitmapgg.library.view.RingProgressBar;
 
+import static java.sql.Types.NULL;
+
 public class PlantStats extends AppCompatActivity {
 
     @Override
@@ -82,19 +84,37 @@ public class PlantStats extends AppCompatActivity {
                 }
             }).start();
 
-            if (PlantSpecies.equals("Sweet Potato")) {
-                plantimage_stats.setImageResource(R.mipmap.ic_kamote);
-            }else if (PlantSpecies.equals("Eggplant")){
-                plantimage_stats.setImageResource(R.mipmap.ic_eggplant);
-            }
+            int cs1 = current_step;
+            int cs2 = current_step + 1;
+            int cs3 = current_step + 2;
 
             String step1 = db_helper.get_step(PlantSpecies,current_step);
             String step2 = db_helper.get_step(PlantSpecies,current_step + 1);
             String step3 = db_helper.get_step(PlantSpecies,current_step + 2);
-            final int cs1 = current_step;
-            final int cs2 = current_step + 1;
-            final int cs3 = current_step + 2;
-            next_steps.setText(cs1 + ". " + step1 + '\n' + '\n' + cs2 + ". " + step2 + '\n' + '\n' + cs3 + ". " + step3 + '\n');
+
+            if (PlantSpecies.equals("Sweet Potato")) {
+                plantimage_stats.setImageResource(R.mipmap.ic_kamote);
+
+                if(current_step == 14){
+                    next_steps.setText(cs1 + ". " + step1 + '\n' + '\n' + cs2 + ". " + step2 + '\n');
+                }else if(current_step == 15){
+                    next_steps.setText(cs1 + ". " + step1 + '\n');
+                }else{
+                    next_steps.setText(cs1 + ". " + step1 + '\n' + '\n' + cs2 + ". " + step2 + '\n' + '\n' + cs3 + ". " + step3 + '\n');
+                }
+
+            }else if (PlantSpecies.equals("Eggplant")){
+                plantimage_stats.setImageResource(R.mipmap.ic_eggplant);
+
+                if(current_step == 15){
+                    next_steps.setText(cs1 + ". " + step1 + '\n' + '\n' + cs2 + ". " + step2 + '\n');
+                }else if(current_step == 16){
+                    next_steps.setText(cs1 + ". " + step1 + '\n');
+                }else{
+                    next_steps.setText(cs1 + ". " + step1 + '\n' + '\n' + cs2 + ". " + step2 + '\n' + '\n' + cs3 + ". " + step3 + '\n');
+                }
+            }
+
 
             if( (PlantSpecies.equals("Eggplant") && (current_step == 8 || current_step == 15) ) ||
                     ((PlantSpecies.equals("Sweet Potato")) && (current_step == 3 || current_step == 6
@@ -135,7 +155,7 @@ public class PlantStats extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     DatabaseHelper db = new DatabaseHelper(PlantStats.this);
-                    long variable_time = db.time_til_next_notif(PlantSpecies, current_step);
+                    long variable_time = db.time_til_next_notif(PlantSpecies, current_step) + 86400;
                     db.done_step(PlantName, PlantSpecies, current_step);
                     AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 

@@ -28,9 +28,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String MISC_TABLE = "MISC_TABLE";
     public static final String COL_1_MISC_TABLE = "Name";
     public static final String COL_2_MISC_TABLE = "Value";
-    //insert plant steps here
-    //let x be the maximum number of steps
-    //column number would then be 2 + x; use NULL if certain species have < ( 2 + x )
 
     public static final String EGGPLANT_STEP_1 = "Clean your containers.";
     public static final String EGGPLANT_STEP_2 = "Prepare soil. Mix 2 parts potting soil, 1 part sand. Mix a little compost and 5-10-5 fertilizer.";
@@ -52,9 +49,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             " Tie the eggplant to the support to promote upward growth.";
     public static final String EGGPLANT_STEP_16 = "Harvest when the skin looks glossy.";
     public static final long EGGPLANT_STEP_9_TIME = 3628800;
-    //public static final long EGGPLANT_STEP_9_TIME = 5; //for testing purposes
+    //public static final long EGGPLANT_STEP_9_TIME = 5; //5secs, for testing purposes
     public static final long EGGPLANT_STEP_16_TIME = 5011200;
-    //public static final long EGGPLANT_STEP_16_TIME = 10; //for testing purposes
+    //public static final long EGGPLANT_STEP_16_TIME = 10; //10secs, for testing purposes
 
     public static final String SWEET_POTATO_STEP_1 = "Clean the sweet potato and split it in half (or large sections)";
     public static final String SWEET_POTATO_STEP_2 = "Put them in a container with half of the potato submerged in water";
@@ -96,18 +93,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_NAME2 + "(" + COL_1_2 + " INTEGER PRIMARY KEY AUTOINCREMENT," + COL_2_2 + " TEXT)");
-            //db.execSQL("create table " + TABLE_NAME2 + +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, Plant_Species TEXT)");
-            //db.execSQL("create table " + TABLE_NAME1 + " (Plant_Name TEXT PRIMARY KEY, Plant_Species TEXT)");
         db.execSQL("create table " + TABLE_NAME1 + "(" + COL_1 + " TEXT PRIMARY KEY," + COL_2 + " TEXT," +
                 COL_3 + " INTEGER," + COL_4 + " INTEGER," + COL_5 + " INTEGER," + COL_6 + " INTEGER)");
-            //db.execSQL("create table " + TABLE_NAME3 + " (" + COL_1_3 + " INTEGER," + COL_2_3 + " TEXT PRIMARY KEY)");
         db.execSQL("create table " + MISC_TABLE + "(" + COL_1_MISC_TABLE + " TEXT PRIMARY KEY," + COL_2_MISC_TABLE + " INTEGER)");
 
         ContentValues for_misc = new ContentValues();
         for_misc.put(COL_1_MISC_TABLE,"Happiness");
         for_misc.put(COL_2_MISC_TABLE, 55);
         db.insert(MISC_TABLE,null,for_misc);
-        //}
+
     }
 
     //SQLite removes the table only if the table exists, otherwise, do nothing
@@ -117,7 +111,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    //@RequiresApi(api = Build.VERSION_CODES.O)
     public boolean insertData(String PlantName, String PlantSpecies) {
         long current_time = System.currentTimeMillis();
 
@@ -161,7 +154,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     break;
                 case 15: res = EGGPLANT_STEP_16_TIME;
                     break;
-                default: res = 10;
+                default: res = 0;
             }
         }
         else if(Species.equals("Sweet Potato")){
@@ -178,7 +171,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     break;
                 case 14: res = SWEET_POTATO_STEP_15_TIME;
                     break;
-                default: res = 10;
+                default: res = 0;
             }
         }
 

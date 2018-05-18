@@ -9,10 +9,6 @@
         <item name="alertDialogTheme">@style/AppCompatAlertDialogStyle</item>
 
 
-        <!-- Needed when Toolbar code block is uncommented in AddPlant.java
-            <item name="windowActionBar">false</item>
-            <item name="windowNoTitle">true</item>
-         -->
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

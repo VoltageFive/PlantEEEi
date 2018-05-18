@@ -30,7 +30,7 @@
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@mipmap/ic_angry" />
+                    app:srcCompat="@mipmap/ic_sad" />
 
                 <TextView
                     android:id="@+id/textView4"

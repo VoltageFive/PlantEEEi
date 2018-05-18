@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class BeginnerFragment extends Fragment {
-    public String item2 = "NULL";
     public String eggplant = "Eggplant";
     public String kamote = "Sweet Potato";
 

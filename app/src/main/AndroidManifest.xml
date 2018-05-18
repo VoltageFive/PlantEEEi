@@ -51,8 +51,6 @@
 
         <activity android:name=".PlantList" />
 
-        <activity android:name=".x_plant_statistic" />
-
         <activity
             android:name=".PlantStats"
             android:label="@string/title_activity_plant_stats"
